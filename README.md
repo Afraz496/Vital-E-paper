@@ -2,11 +2,11 @@
 
 This markdown supports the Vital-E paper and is structured as follows:
 
-1. Python: Includes all the Python scripts used for the ML portion of the manuscript (Generates Figure 3 of the manuscript)
-2. R: Includes all the R Scripts used for creating the simulated Ct Data (used in Figure 3) and for all the SEIR analysis on the provincial and outbreak data (Figure 4). For a full guide on how to run the software in R please refer to the [virosolver](https://github.com/jameshay218/virosolver) and [virosolver_paper](https://github.com/jameshay218/virosolver_paper) repositories by James Hay.
-3. Simulated Data: Includes 3 different sizes of simulated ct values with seed 0.
+1. `Python`: Includes all the Python scripts used for the ML portion of the manuscript (Generates Figure 3 of the manuscript)
+2. `R`: Includes all the R Scripts used for creating the simulated Ct Data (used in Figure 3) and for all the SEIR analysis on the provincial and outbreak data (Figure 4). For a full guide on how to run the software in R please refer to the [virosolver](https://github.com/jameshay218/virosolver) and [virosolver_paper](https://github.com/jameshay218/virosolver_paper) repositories by James Hay.
+3. `Simulated Data`: Includes 3 different sizes of simulated ct values with seed 0.
 
-The remaining repository is structured as follows:
+The remaining README is structured as follows:
 
 1. Setup
 2. Generating Simulated Ct Data
@@ -15,11 +15,11 @@ The remaining repository is structured as follows:
 
 # Setup
 
-In order to run the software in this repository there are dependencies which are required to run both the pipeline and the compartmental models. These portion of the README divides the dependencies into the Python related/R related dependencies and expands on their installation.
+In order to run the software in this repository there are dependencies which must be installed. This portion of the README divides the dependencies into the Python related/R related dependencies and expands on their installation.
 
 ## Python
 
-The environment comes with an accompanying `environment.yml` file to create a virtual environment to run the Machine Learning envrionment.
+The environment comes with an accompanying `environment.yml` file to create a virtual environment to run the Machine Learning pipeline.
 
 In project directory run the following:
 ```bash
@@ -60,7 +60,7 @@ done
 
 This script uses the seeds [0, 1, 2, 3, ..., 100] with sample sizes of [100,1000,10000] to create Ct values with an arbitrary time and a generated Rt value. This is then fed into the Machine Learning Pipeline to generate First moments on the Ct values as features and separate the predictor `Rt` into a separate file. 
 
-To help you get started with the usage section there are 3 files of seed 0 with different sample sizes to use in the Machine Learning pipeline.
+To help you get started with the usage section there are 3 files of seed 0 with different sample sizes to use in the Machine Learning pipeline in this repository.
 
 # Usage
 
@@ -116,7 +116,7 @@ This command reads the file `Data/ct_data.csv` and sends the pipeline output to 
 
 Apart from the Ct simulation R scripts, there are accompanying scripts which generate the figures used for the compartmental models in the paper. There are 2 files of interest `outbreak_SEIR.R` and `multiple_cross_sections_SEIR_horizons.R`. 
 
-The `outbreak_SEIR.R` file was used to perform a validation piece on an outbreak in BC. 
+The `outbreak_SEIR.R` file was used to perform a validation piece on an outbreak in British Columbia. 
 
 The `mutliple_cross_sections_SEIR_horizons.R` file was run on a random population of individuals in British Columbia to predict an Omicron wave.
 
